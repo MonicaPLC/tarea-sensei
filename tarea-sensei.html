@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+    class Ninja {
+      constructor(nombre,salud,velocidad=3,fuerza=3){
+        this.nombre=nombre;
+        this.salud=salud;
+        this.velocidad=velocidad;
+        this.fuerza=fuerza;
+      }
+    
+      sayName(){
+        console.log("Mi nombre es" + this.nombre);
+      }
+    
+      showState(){
+        console.log(`Nombre: ${this.nombre}
+                    Salud: ${this.salud}
+                    velocidad: ${this.velocidad}
+                    fuerza: ${this.fuerza}`
+                    );
+      }
+    
+      drinkSake(){
+        this.salud+=10;
+    
+      } 
+    
+    }
+    
+    // crear objetos
+    const ninja1=new Ninja("Kunfupanda",10,5,2);
+    const ninja2=new Ninja("Mulan", 15);
+   
+    // salir por pantala ninja y su salud;
+    console.log(ninja1.salud);
+    
+        // usar un ninja y un método.
+    ninja1.drinkSake();
+
+    // usar ninja1 y sólo salud.
+    ninja1.salud;
+    
+    
+    
+    // TAREA SUPER NINJA
+    
+    class Sensei extends Ninja{
+      constructor(nombre,salud=200,velocidad=10,fuerza=10,sabiduría=10){
+        super(nombre, salud, velocidad, fuerza)
+        this.sabiduría=sabiduría;
+      }
+    
+      speakWisdom (){
+    
+        drinkSake();
+        console.log("Más vale tarde que nunca");
+       }
+        
+    }
+    
+    const sensei1=new Sensei("Mijagy");
+    sensei1.speakWisdom(); 
+    
+    </script> 
+</body>
+</html>
